@@ -1,0 +1,19 @@
+---
+- name: ssh folder
+  file: path=/home/{{ user }}/.ssh
+        owner={{ user }}
+        group={{ user }}
+        mode=0700
+
+
+- name: authorized keys folder
+  file: path=/home/{{ user }}/.ssh/authorized_keys
+        owner={{ user }}
+        group={{ user }}
+        mode=0644
+
+
+- name: set up authorized keys
+  authorized_key: user="{{ user }}" key="{{ item }}"
+  with_file:
+  - development

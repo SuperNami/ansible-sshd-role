@@ -1,0 +1,9 @@
+---
+- name: sshd
+  hosts: all
+  user: root
+  become: true
+  roles:
+  - sshd
+  vars_files:
+  - vars/local.yml

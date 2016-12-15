@@ -1,0 +1,3 @@
+---
+- include: authorized_keys.yml
+  tags: authorized_keys
